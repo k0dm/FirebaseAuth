@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "336039711772",
+    "project_id": "fir-auth-79f12",
+    "storage_bucket": "fir-auth-79f12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336039711772:android:29b45fd20f4d8d2e90bbd9",
+        "android_client_info": {
+          "package_name": "com.bugbender.firebaseauth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3ZsPi-w_xzeynUvEPH2H19MByJocg8oM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

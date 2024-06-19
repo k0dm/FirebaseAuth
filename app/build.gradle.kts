@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -35,15 +36,27 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+
+
+    // Import the BoM for the Firebase platform
+    implementation(platform(libs.firebase.bom))
+
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.analytics)
+
     //hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
 
     //viewModel by viewModels()
     implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.fragment.ktx)
 
     //Base libs
     implementation(libs.androidx.core.ktx)
