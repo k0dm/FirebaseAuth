@@ -6,10 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.bugbender.firebaseauth.R
+import androidx.fragment.app.viewModels
 import com.bugbender.firebaseauth.databinding.FragmentSignInBinding
 import dagger.hilt.android.AndroidEntryPoint
-import androidx.fragment.app.viewModels
 
 @AndroidEntryPoint
 class SignInFragment : Fragment() {
@@ -47,6 +46,10 @@ class SignInFragment : Fragment() {
                     password = passwordEditText.text.toString()
                 )
             }
+        }
+
+        signInWithGoogleButton.setOnClickListener {
+            viewModel.loginWithGoogle(requireContext())
         }
 
         viewModel.liveData().observe(viewLifecycleOwner) { uiState ->

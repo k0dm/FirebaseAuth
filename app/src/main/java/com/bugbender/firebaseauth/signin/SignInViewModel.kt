@@ -1,12 +1,12 @@
 package com.bugbender.firebaseauth.signin
 
+import android.content.Context
 import com.bugbender.firebaseauth.core.data.AuthRepository
 import com.bugbender.firebaseauth.core.presentation.BaseViewModel
 import com.bugbender.firebaseauth.core.presentation.Navigation
 import com.bugbender.firebaseauth.core.presentation.ProvideLiveData
 import com.bugbender.firebaseauth.core.presentation.RunAsync
 import com.bugbender.firebaseauth.signup.SignUpScreen
-import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -24,6 +24,14 @@ class SignInViewModel @Inject constructor(
 
         runAsync({
             authRepository.login(email = email, password = password)
+        }) { authResult ->
+            authResult.map(mapper)
+        }
+    }
+
+    fun loginWithGoogle(context: Context) {
+        runAsync({
+            authRepository.loginWithGoogle(context)
         }) { authResult ->
             authResult.map(mapper)
         }

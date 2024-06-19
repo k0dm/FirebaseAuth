@@ -1,5 +1,6 @@
 package com.bugbender.firebaseauth.di
 
+import com.bugbender.firebaseauth.core.data.ProvideResources
 import com.bugbender.firebaseauth.core.presentation.Navigation
 import com.bugbender.firebaseauth.core.presentation.RunAsync
 import dagger.Binds
@@ -19,4 +20,7 @@ abstract class MainModule {
 
     @Binds
     abstract fun bindRunAsync(runAsync: RunAsync.Base): RunAsync
+
+    @Binds
+    abstract fun bindProvideResources(provideResources: ProvideResources.Base): ProvideResources
 }

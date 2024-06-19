@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace = "com.bugbender.firebaseauth"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.bugbender.firebaseauth"
         minSdk = 29
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -42,13 +42,16 @@ android {
 }
 
 dependencies {
-
-
-    // Import the BoM for the Firebase platform
+    //Firebase and auth
     implementation(platform(libs.firebase.bom))
-
-    implementation(libs.firebase.auth)
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth)  //Firebase Authentication library
+    implementation(libs.play.services.auth) // Google Play services library for auth
+
+    //Google auth
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)     //for credentials support from play services, for devices running  Android 13 and below.
+    implementation(libs.googleid)
 
     //hilt
     implementation(libs.hilt.android)

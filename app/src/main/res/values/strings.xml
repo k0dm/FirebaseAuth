@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">FirebaseAuth</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -11,4 +10,6 @@
     <string name="create_account">Create Account</string>
     <string name="log_out">Log out</string>
     <string name="userlogin"><b>UserLogin:</b> %s</string>
+    <string name="web_client_id">336039711772-1kt0hir63e2ggmb91aao7np3akb2ss8t.apps.googleusercontent.com</string>
+
 </resources>
