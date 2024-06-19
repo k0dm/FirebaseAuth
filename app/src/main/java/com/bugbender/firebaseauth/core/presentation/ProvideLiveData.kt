@@ -1,4 +1,4 @@
-package com.bugbender.firebaseauth.core
+package com.bugbender.firebaseauth.core.presentation
 
 import androidx.lifecycle.LiveData
 

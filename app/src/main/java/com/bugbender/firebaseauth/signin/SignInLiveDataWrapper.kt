@@ -1,6 +1,6 @@
 package com.bugbender.firebaseauth.signin
 
-import com.bugbender.firebaseauth.core.LiveDataWrapper
+import com.bugbender.firebaseauth.core.presentation.LiveDataWrapper
 import javax.inject.Inject
 
 interface SignInLiveDataWrapper: LiveDataWrapper<SignInUiState> {

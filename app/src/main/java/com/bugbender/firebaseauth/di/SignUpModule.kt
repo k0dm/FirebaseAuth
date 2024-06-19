@@ -1,5 +1,6 @@
 package com.bugbender.firebaseauth.di
 
+import com.bugbender.firebaseauth.signup.SignUpAuthResultMapper
 import com.bugbender.firebaseauth.signup.SignUpLiveDataWrapper
 import dagger.Binds
 import dagger.Module
@@ -13,5 +14,9 @@ abstract class SignUpModule {
 
     @Binds
     @ViewModelScoped
-    abstract fun liveDataWrapper(liveDataWrapper: SignUpLiveDataWrapper.Base): SignUpLiveDataWrapper
+    abstract fun bindLiveDataWrapper(liveDataWrapper: SignUpLiveDataWrapper.Base): SignUpLiveDataWrapper
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindMapper(mapper: SignUpAuthResultMapper.Base): SignUpAuthResultMapper
 }

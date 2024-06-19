@@ -1,9 +1,10 @@
 package com.bugbender.firebaseauth.main
 
 import androidx.lifecycle.ViewModel
-import com.bugbender.firebaseauth.core.Navigation
-import com.bugbender.firebaseauth.core.ProvideLiveData
-import com.bugbender.firebaseauth.core.Screen
+import com.bugbender.firebaseauth.core.data.AuthRepository
+import com.bugbender.firebaseauth.core.presentation.Navigation
+import com.bugbender.firebaseauth.core.presentation.ProvideLiveData
+import com.bugbender.firebaseauth.core.presentation.Screen
 import com.bugbender.firebaseauth.profile.UserProfileScreen
 import com.bugbender.firebaseauth.signin.SignInScreen
 import com.google.firebase.auth.FirebaseAuth
@@ -15,16 +16,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val navigation: Navigation.Mutable
+    private val navigation: Navigation.Mutable,
+    private val authRepository: AuthRepository
 ) : ViewModel(), ProvideLiveData<Screen> {
 
-    private lateinit var auth: FirebaseAuth
-
     fun checkUserSigning() {
-        auth = Firebase.auth
-        val currentUser = auth.currentUser
-
-        val screen = if (currentUser != null) {
+        val screen = if (authRepository.isUserLogged()) {
             UserProfileScreen
         } else {
             SignInScreen

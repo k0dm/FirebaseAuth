@@ -18,11 +18,6 @@ class SignInFragment : Fragment() {
     private val binding: FragmentSignInBinding get() = _binding!!
     private val viewModel: SignInViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel.init()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
